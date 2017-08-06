@@ -103,16 +103,15 @@ app.get('/', function (req, res) {
 
 // three more articles
 
+app.get('/article-three', function(req, res){
+   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
+});
 
 
 app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
     var articleName = req.params.articleName;   //stroring :articleName into a var
    res.send(createTemplate(articles[articleName]));     // sends  articles[recieved request] from articles object
-});
-
-app.get('/article-three', function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
 });
 
 
