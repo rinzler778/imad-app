@@ -118,7 +118,7 @@ app.get('/article-three', function(req, res){
 
 app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
-    var articleName = req.params.articleName;   //stroring :articleName into a var
+    var articleName = req.params.articleName;   //storing :articleName into a var
    res.send(createTemplate(articles[articleName]));     // sends  articles[recieved request] from articles object
 });
 
@@ -136,6 +136,20 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
+
+// submit name button
+var names=[];
+
+app.get('/submit-name/:name', function(req,res){
+    
+    var name = req.params.name;
+    
+    names.push(name);
+    
+    req.send(JSON.stringify(names));
+    
+});
+
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
