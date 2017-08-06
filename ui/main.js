@@ -62,7 +62,7 @@ submit.onclick = function(){
 
           if(request.status === 200){    //request completed
           
-            var names = request.resposeText;
+            var names = request.responseText;
             names = JSON.parse(names);  //convert JSON to array
             var list = '';
             for(var i =0; i< names.length; i++){
