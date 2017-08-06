@@ -70,7 +70,7 @@ submit.onclick = function(){
                 list += '<li>' + names[i] + '</li>';
             }
             var ui = document.getElementById('nameList');
-            ui.innerHTML = list;
+            ul.innerHTML = list;
             
           }
       }//not DONE yet
