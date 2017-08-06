@@ -30,7 +30,7 @@ button.onclick = function (){
     request.onreadystatechange = function(){
       if(request.readystate === XMLHttpRequest.DONE){
           //take some action
-          if(reuest.status === 200){    //request completed
+          if(request.status === 200){    //request completed
               var counter = request.responseText;   //extract value from request
               //render the variable in the correct span
               var span = document.getElementById('count');
