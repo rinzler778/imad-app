@@ -109,6 +109,20 @@ app.get('/counter', function(req,res){
    res.send(counter.toString());
 });
 
+
+// submit name button
+var names=[];
+
+app.get('/submit-name', function(req,res){    //URL ...app.io/submit-name?name=xxxxx
+    
+    var name = req.query.name;
+    
+    names.push(name);
+    
+    res.send(JSON.stringify(names));
+    
+});
+
 // three more articles
 // get for aricl-three ust be above the other two ???
 app.get('/article-three', function(req, res){
@@ -137,18 +151,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-// submit name button
-var names=[];
 
-app.get('/submit-name', function(req,res){    //URL ...app.io/submit-name?name=xxxxx
-    
-    var name = req.query.name;
-    
-    names.push(name);
-    
-    res.send(JSON.stringify(names));
-    
-});
 
 
 
