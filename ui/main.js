@@ -8,11 +8,11 @@ element.innerHTML = 'New Value from main.js';
 var img = document.getElementById('madi');
 var marginLeft = 0;
 function moveRight(){
-    marginLeft += 10;
+    marginLeft += 5;
     img.style.marginLeft = marginLeft + 'px';   //concatenating
 }
 img.onclick = function(){
-    var interval = setInterval(moveRight, 100); //every 100ms call moveRight
+    var interval = setInterval(moveRight, 50); //every 100ms call moveRight
 };
 
 
