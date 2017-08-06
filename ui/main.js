@@ -25,13 +25,14 @@ button.onclick = function (){
     var request = new XMLHttpRequest();
     
     
-    //capture the respnse and store it in a variable
+    //capture the response and store it in a variable
     request.onreadystatechange = function(){
+        
       if(request.readyState === XMLHttpRequest.DONE){
-          //take some action
+
           if(request.status === 200){    //request completed
-              var counter = request.responseText;   //extract value from request
-              //render the variable in the correct span
+              var counter = request.responseText;   //extract value from request ie send from server.js
+
               var span = document.getElementById('count');
               span.innerHTML = counter.toString();
           }
