@@ -103,6 +103,11 @@ app.get('/', function (req, res) {
 
 // three more articles
 
+app.get('/article-three', function(req, res){
+   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
+});
+
+
 app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
     var articleName = req.params.articleName;   //stroring :articleName into a var
@@ -110,10 +115,6 @@ app.get('/:articleName', function(req, res){    // : means it will match the par
 });
 
 
-
-app.get('/article-three', function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
-});
 
 //other responses
 app.get('/ui/style.css', function (req, res) {
