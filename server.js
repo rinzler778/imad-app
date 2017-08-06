@@ -5,9 +5,10 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-//2 New Objects
+// new Object
+// kind of an array
 
-var articles = {
+var articles = {    
     
     'article-one': {
     title: 'Article-One | Aiden Pearce',
@@ -103,6 +104,8 @@ app.get('/', function (req, res) {
 // three more articles
 
 app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
+    
+    var articleName = req.params.articleName;   //stroring :articleName into a var
    res.send(createTemplate(articles[articleName]));     // sends  articles[recieved request] from articles object
 });
 
