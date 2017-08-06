@@ -102,7 +102,7 @@ app.get('/', function (req, res) {
 });
 
 // three more articles
-
+// get for aricl-three ust be above the other two ???
 app.get('/article-three', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
 });
