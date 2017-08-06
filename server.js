@@ -9,18 +9,15 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));//ui/index.html
 });
 
+// three more articles
+
 app.get('/article-one', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'article-one.html')); 
 });
 
-// three more articles
-
-app.get('/article-one', function(req, res){
-   res.send('Article one will de served here...'); 
-});
 
 app.get('/article-two', function(req, res){
-   res.send('Article two will de served here...'); 
+   res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
 });
 
 app.get('/article-three', function(req, res){
