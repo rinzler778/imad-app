@@ -101,6 +101,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));//ui/index.html
 });
 
+//add a counter
+app.get('/counter', function(req,res){
+   counter = counter + 1;
+   res.send(counter.toString());
+});
+
 // three more articles
 // get for aricl-three ust be above the other two ???
 app.get('/article-three', function(req, res){
