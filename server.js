@@ -126,7 +126,7 @@ app.get('/ui/madi.png', function (req, res) {
 
 //get the main.js file (client-side js)
 app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'man.js'));
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 
