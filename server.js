@@ -140,9 +140,9 @@ app.get('/ui/main.js', function (req, res) {
 // submit name button
 var names=[];
 
-app.get('/submit-name/:name', function(req,res){
+app.get('/submit-name', function(req,res){    //URL ...app.io/submit-name?name=xxxxx
     
-    var name = req.params.name;
+    var name = req.query.name;
     
     names.push(name);
     
