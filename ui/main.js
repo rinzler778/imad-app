@@ -18,7 +18,6 @@ img.onclick = function(){
 
 //update counter text
 var button = document.getElementById('counterB');
-var counter = 0;
 
 button.onclick = function (){
     
