@@ -6,6 +6,7 @@ element.innerHTML = 'New Value from main.js';
 
 //move image
 var img = document.getElementById('madi');
+var marginLeft = 0;
 function moveRight(){
     marginLeft += 10;
     img.style.marginLeft = marginLeft + 'px';   //concatenating
