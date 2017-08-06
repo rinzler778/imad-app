@@ -7,7 +7,9 @@ app.use(morgan('combined'));
 
 //2 New Objects
 
-var articleOne  ={
+var articles = {
+    
+    'article-one': {
     title: 'Article-One | Aiden Pearce',
     heading:'Article - One',
     date: 'Aug 6, 2017',
@@ -25,8 +27,24 @@ var articleOne  ={
             Content for this Article.Content for this Article.Content for this Article.Content for this Article.
             Content for this Article.Content for this Article.Content for this Article.Content for this Article.
         </p>`
+},
+
+    'article-two': {
+    title: 'Article-Two | Aiden Pearce',
+    heading:'Article - Two',
+    date: 'Aug 6, 2017',
+    content:`
+        <p>
+            This is the content for my Second article...
+        </p>
+       <p>
+            Content for this Article. Content for this Article. Content for this Article. p1
+        </p>`
+    }
+
 };
 
+//funct to return html data (not a file)
 function createTemplate (data){
     
     var title =  data.title;
@@ -84,14 +102,11 @@ app.get('/', function (req, res) {
 
 // three more articles
 
-app.get('/article-one', function(req, res){
-   res.send(createTemplate(articleOne)); 
+app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
+   res.send(createTemplate(articles[articleName]));     // sends  articles[recieved request] from articles object
 });
 
 
-app.get('/article-two', function(req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
-});
 
 app.get('/article-three', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
