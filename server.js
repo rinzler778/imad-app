@@ -14,7 +14,6 @@ var config = {
     password: 'db-ajithphilip255-4416'
 };
 
-console.log("header files included****");
 // new Object
 // kind of an array
 
@@ -114,7 +113,6 @@ app.get('/', function (req, res) {
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
     
-    console.log("ok here");
     
     pool.query('SELECT * FROM test', function(err, result){
        if(err){
@@ -163,7 +161,7 @@ app.get('/articles/:articleName', function(req, res){    // : means it will matc
     
     var articleName = req.params.articleName;   //storing :articleName into a var
     
-    pool.query("SELECT * FROM article WHERE title = " + req.params.articleName, function(err, result){
+    pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else{
