@@ -14,6 +14,7 @@ var config = {
     password: '	db-ajithphilip255-4416'
 };
 
+console.log("header files included****");
 // new Object
 // kind of an array
 
