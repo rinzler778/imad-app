@@ -1,9 +1,18 @@
 var express = require('express');   //create the server handling and listening to servers
 var morgan = require('morgan');     //logs
 var path = require('path');
+var Pool = require('pg').Pool;
 
 var app = express();
 app.use(morgan('combined'));
+
+var config = {
+    user: 'ajthphilip255',
+    database: 'ajthphilip255',
+    host: 'db.imad.hasura-app.io',
+    port: '5432',
+    password: process.env.DB_PASSWORD
+};
 
 // new Object
 // kind of an array
@@ -94,6 +103,20 @@ return htmlTemplate;
 
 }
 
+var pool = new Pool(config);
+app.get('/test-db', function(req, res){
+    
+    pool.query('SELECT * FROM test', function(err, res){
+       if(err){
+           
+           res.status(500).send(err.toString());
+       } else{
+           
+           res.send(JSON.stringify(result));
+       }
+    });
+    
+});
 
 //Pages or URL
 
