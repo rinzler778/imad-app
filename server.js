@@ -17,42 +17,6 @@ var config = {
 // new Object
 // kind of an array
 
-var articles = {    
-    
-    'article-one': {
-    title: 'Article-One | Aiden Pearce',
-    heading:'Article - One',
-    date: 'Aug 6, 2017',
-    content:`
-        <p>
-            This is the content for my first article...
-        </p>
-       <p>
-            Content for this Article. Content for this Article. Content for this Article. 
-            Content for this Article. Content for this Article. Content for this Article. 
-            Content for this Article. Content for this Article. Content for this Article.
-        </p>
-        <p>
-            Content for this Article.Content for this Article.Content for this Article.Content for this Article.
-            Content for this Article.Content for this Article.Content for this Article.Content for this Article.
-            Content for this Article.Content for this Article.Content for this Article.Content for this Article.
-        </p>`
-},
-
-    'article-two': {
-    title: 'Article-Two | Aiden Pearce',
-    heading:'Article - Two',
-    date: 'Aug 6, 2017',
-    content:`
-        <p>
-            This is the content for my Second article...
-        </p>
-       <p>
-            Content for this Article. Content for this Article. Content for this Article. p1
-        </p>`
-    }
-
-};
 
 //funct to return html data (not a file)
 function createTemplate (data){
