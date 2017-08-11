@@ -11,7 +11,7 @@ var config = {
     database: 'ajithphilip255',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: '	db-ajithphilip255-4416'
+    password: 'db-ajithphilip255-4416'
 };
 
 console.log("header files included****");
