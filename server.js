@@ -161,7 +161,7 @@ app.get('/articles/:articleName', function(req, res){    // : means it will matc
     
     var articleName = req.params.articleName;   //storing :articleName into a var
     
-    pool.query("SELECT * FROM article WHERE title = " + req.params.articleName, function(err, result){
+    pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName + "'", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else{
