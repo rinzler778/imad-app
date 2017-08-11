@@ -153,11 +153,11 @@ app.get('/article-three', function(req, res){
 });
 
 
-app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
+/*app.get('/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
     var articleName = req.params.articleName;   //storing :articleName into a var
    res.send(createTemplate(articles[articleName]));     // sends  articles[recieved request] from articles object
-});
+}); */
 
 
 //other responses
