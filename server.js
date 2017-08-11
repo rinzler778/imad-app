@@ -159,6 +159,8 @@ app.get('/article-three', function(req, res){
 
 app.get('articles/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
+    console.log("In here");
+    
     var articleName = req.params.articleName;   //storing :articleName into a var
     
     pool.query("SELECT * FROM article WHERE title = " + req.params.articleName, function(err, result){
