@@ -104,6 +104,13 @@ return htmlTemplate;
 
 }
 
+
+//Pages or URL
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));//ui/index.html
+});
+
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
     
@@ -119,12 +126,6 @@ app.get('/test-db', function(req, res){
        }
     });
     
-});
-
-//Pages or URL
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));//ui/index.html
 });
 
 //add a counter
