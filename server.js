@@ -11,7 +11,7 @@ var config = {
     database: 'ajthphilip255',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: process.env.DB_PASSWORD
+    password: '	db-ajithphilip255-4416'
 };
 
 // new Object
