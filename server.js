@@ -2,6 +2,7 @@ var express = require('express');   //create the server handling and listening t
 var morgan = require('morgan');     //logs
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
 
 var app = express();
 app.use(morgan('combined'));
@@ -74,8 +75,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));//ui/index.html
 });
 
+function hash(input, salt){
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    return hashed.toString('hex');
+}
+
 app.get('/hash/:input', function(req, res){
-   var hashedString = hash(req.parms.input);
+   var hashedString = hash(req.parms.input, 'some-random-string');
    res.send(hashedString);
 });
 
