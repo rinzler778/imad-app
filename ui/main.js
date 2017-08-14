@@ -55,7 +55,7 @@ submit.onclick = function(){
   
     var request = new XMLHttpRequest();      //create a request object to counter end point
     
-    //capture the response and store it in a variable
+    
     request.onreadystatechange = function(){
         
       if(request.readyState === XMLHttpRequest.DONE){
