@@ -35,6 +35,7 @@ submit.onclick = function(){
     
     //make the request
     request.open('POST', 'http://ajithphilip255.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
     
 };
