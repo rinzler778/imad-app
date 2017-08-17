@@ -7,7 +7,7 @@ var bodyParser = require('bodyParser');
 
 var app = express();
 app.use(morgan('combined'));
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 var config = {
     user: 'ajithphilip255',
