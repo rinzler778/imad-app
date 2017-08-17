@@ -1,20 +1,20 @@
 cosole.log("Login Page");
 
-
+alert("loaded");
 //submit login
 
 var submit = document.getElementById('submit_btn');
 
 submit.onclick = function(){
   
-    var request = new XMLHttpRequest();      //create a request object to counter end point
+    var request = new XMLHttpRequest();      
     
     
     request.onreadystatechange = function(){
         
       if(request.readyState === XMLHttpRequest.DONE){
 
-          if(request.status === 200){    //request completed
+          if(request.status === 200){    
           
             console.log("user logged in");
             alert("logged in successfully");
