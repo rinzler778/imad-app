@@ -173,6 +173,9 @@ app.get('/article-three', function(req, res){
    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
 });
 
+app.get('/login-page', function(req, res){
+   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));  
+});
 
 app.get('/articles/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
