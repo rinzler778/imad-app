@@ -4,10 +4,15 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: { maxAge: 1000*60*60*24}
+}));
 
 var config = {
     user: 'ajithphilip255',
@@ -120,7 +125,12 @@ app.post('/login', function(req, res){
               var salt = dbString.split('$')[2];
               var hashedPassword = hash(password, salt);
               if(hashedPassword === dbString){
+                  
+                  req.session.auth = {userId: result.rows[0].id};
                   res.send("credentials are right");
+                  
+                  
+                  
               } else{
               res.send(403).send("username/pass incorrect");
                   
@@ -129,6 +139,10 @@ app.post('/login', function(req, res){
       }
     });
     
+});
+
+app.get('/check-login', function (req, res) {
+  if(req.session )
 });
 
 var pool = new Pool(config);
