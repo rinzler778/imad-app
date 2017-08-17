@@ -1,4 +1,4 @@
-cosole.log("Login Page");
+console.log("Login Page");
 
 alert("loaded");
 //submit login
