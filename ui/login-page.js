@@ -1,6 +1,6 @@
 console.log("Login Page");
 
-alert("loaded");
+
 //submit login
 
 var submit = document.getElementById('submit_btn');
