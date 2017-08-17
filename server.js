@@ -77,10 +77,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));//ui/index.html
 });
 
-// function hash(input, salt){
-//     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');  //hashed 10000 times
-//     return ["pbkdf2", "10000",salt, hashed.toString('hex')].join('$');
-// }
+function hash(input, salt){
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');  //hashed 10000 times
+    return ["pbkdf2", "10000",salt, hashed.toString('hex')].join('$');
+}
 
 app.get('/hash/:input', function(req, res){
    var hashedString = hash(req.params.input, 'some-random-string'); //text: salt so no one can know hash values of specific words
@@ -150,7 +150,6 @@ app.get('/article-three', function(req, res){
 app.get('/articles/:articleName', function(req, res){    // : means it will match the part by converting it to a variable  // (express) framework
     
 
-    
     var articleName = req.params.articleName;   //storing :articleName into a var
     
     pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function(err, result){   //prevents users to run sql commands
