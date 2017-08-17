@@ -3,11 +3,11 @@ var morgan = require('morgan');     //logs
 var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
-//var bodyParser = require('bodyParser');
+var bodyParser = require('body-parser');
 
 var app = express();
 app.use(morgan('combined'));
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 var config = {
     user: 'ajithphilip255',
