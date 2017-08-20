@@ -4,15 +4,15 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+//var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(session({
-    secret: 'someRandomSecretValue',
-    cookie: { maxAge: 1000*60*60*24}
-}));
+// app.use(session({
+//     secret: 'someRandomSecretValue',
+//     cookie: { maxAge: 1000*60*60*24}
+// }));
 
 var config = {
     user: 'ajithphilip255',
@@ -92,6 +92,7 @@ app.get('/hash/:input', function(req, res){
    res.send(hashedString);
 });
 
+/*
 app.post('/create-user', function(req, res){
     
     var username = req.body.username;
@@ -152,7 +153,7 @@ app.get('/check-login', function (req, res) {
 app.get('/logout', function(req, res){
     delete req.session.auth;
     res.send('Logged out');
-});
+}); */
 
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
