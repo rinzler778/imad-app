@@ -18,7 +18,6 @@ submit.onclick = function(){
           
             console.log("user logged in");
             alert("logged in successfully");
-            request.send('GET', 'http://ajithphilip255.imad.hasura-app.io/', true);
             
           } else if(request.status === 403){
               alert("username/password incorrect");
