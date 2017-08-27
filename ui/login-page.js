@@ -38,4 +38,6 @@ submit.onclick = function(){
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
     
+    request.open('GET', 'http://ajithphilip255.imad.hasura-app.io/', true);
+    
 };
