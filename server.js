@@ -92,7 +92,7 @@ app.get('/hash/:input', function(req, res){
    res.send(hashedString);
 });
 
-/*
+
 app.post('/create-user', function(req, res){
     
     var username = req.body.username;
@@ -153,7 +153,7 @@ app.get('/check-login', function (req, res) {
 app.get('/logout', function(req, res){
     delete req.session.auth;
     res.send('Logged out');
-}); */
+});
 
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
