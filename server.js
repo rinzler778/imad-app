@@ -4,15 +4,15 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
-//var session = require('express-session');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-// app.use(session({
-//     secret: 'someRandomSecretValue',
-//     cookie: { maxAge: 1000*60*60*24}
-// }));
+ app.use(session({
+   secret: 'someRandomSecretValue',
+    cookie: { maxAge: 1000*60*60*24}
+    }));
 
 var config = {
     user: 'ajithphilip255',
